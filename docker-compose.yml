@@ -1,0 +1,11 @@
+services:
+  python:
+    build: .
+    container_name: 'prac-py'
+    working_dir: '/work/'
+    volumes:
+      - ./work:/work
+    ports:
+      - "8888:8888"
+    command:
+      jupyter-lab --ip 0.0.0.0 --allow-root -b localhost
